@@ -23,7 +23,7 @@
     {
 
         extract($data);
-        require "template/$template.php";
+        require "templates/$template.php";
 
     }
 

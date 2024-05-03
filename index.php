@@ -13,4 +13,3 @@
 <?php render_template("head",$data)?>
 <?php render_template("main",array_merge($data,["days" => $siguientePelicula ->get_until_message()]))?>
 <?php render_template("style")?>
-

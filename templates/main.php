@@ -18,9 +18,9 @@
     </p>
     <p>        
         La próxima pelicula a estrenar es: <?=$following_production;?>.<br>
-        Que se va a estrenar en <?=["days_until" => $following_production ->get_until_message()];?>
+
     </p>
     </hgroup>
-    hola como estan 
+
 
 </body>
