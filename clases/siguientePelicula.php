@@ -6,7 +6,7 @@ class NextMovie
 {
     public function __construct(  private string $title,
     private int $days,
-    private string $following_production,
+    private array $following_production,
     private string $release_date,
     private string $poster_url,
     private string $overview,)
@@ -24,7 +24,7 @@ class NextMovie
             $days == 1 => "se estrena mañana...",
             $days < 7  => "se estrena esta semana...",
             $days < 30 => "se estrena este mes...",
-            default => "se entrena en $days dias..."
+            default => "se estrena en $days dias..."
         };
     }
     
@@ -33,10 +33,11 @@ class NextMovie
             $resultado = file_get_contents($api_utrl);
             $data = json_decode($resultado,true);
             
+            $following_production = array( $data["following_production"]);
             return new self(
             $data["title"],
             $data["days_until"],
-            $data["following_production"]["title"] ?? "Se desconoce.",
+            $following_production,
             $data["release_date"],
             $data["poster_url"],
             $data["overview"], );

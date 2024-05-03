@@ -17,10 +17,13 @@
         Fecha de estreno: <?=$release_date ?>
     </p>
     <p>        
-        La próxima pelicula a estrenar es: <?=$following_production;?>.<br>
-
+        La próxima pelicula a estrenar es: <?=$following_production[0]["title"];?>.<br>
+        Que se va a estrenar en <?=$following_production[0]["days_until"];?> días.
     </p>
+    <section>
+            <img src=<?=$following_production[0]["poster_url"]?> width="200" height="200" alt="Poster de <?=$following_production[0]["title"]?>" style="border-radius: 32px">
+        </section>
     </hgroup>
-
+ 
 
 </body>
